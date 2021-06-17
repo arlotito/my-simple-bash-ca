@@ -12,7 +12,7 @@ Grab the scripts:
 ```bash
 cd
 sudo rm -rf ~/est-tests
-git clone https://github.com/arlotito/est-tests.git
+git clone https://github.com/arlotito/my-simple-bash-ca
 cd ~/est-tests/certs
 chmod +x *.sh
 ```

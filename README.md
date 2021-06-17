@@ -17,9 +17,9 @@ cd ~/est-tests/certs
 chmod +x *.sh
 ```
 
-Create your certs.
+Customize ./scripts/*.openssl.cnf files as needed or keep default values.
 
-As an example, to create certs as per the diagram above:
+You can now create your certs. As an example, to create certs as per the diagram above:
 ```bash
 cd
 sudo ./create_root.sh
@@ -36,24 +36,23 @@ sudo ./create_client.sh INT3 deviceA
 
 All the certificates are stored in `/root/ca`.
 
-
-Customize .openssl.cnf as needed.
-
-## creates ROOT and INTERMEDIATE certs
-Optionally view the ROOT certificates:
+## view and verify certs
+To optionally view the ROOT certificate:
 ```bash
 sudo openssl x509 -noout -in /root/ca/certs/ca.cert.pem -noout -subject
 sudo openssl x509 -noout -in /root/ca/certs/ca.cert.pem -noout -issuer
 ```
 
-Optionally view the INTERMEDIATE certificates:
-(replace `<INTERMEDIATE>` with int1 or int2 or int3)
+To view the INTERMEDIATE certificates:
+
 ```bash
+# NOTE: replace `<INTERMEDIATE>` with the intermediate name
 sudo openssl x509 -noout -in <INTERMEDIATE>/certs/intermediate.cert.pem -noout -subject
 sudo openssl x509 -noout -in <INTERMEDIATE>/certs/intermediate.cert.pem -noout -issuer
 ```
 
-Optionally verify INTERMEDIATE against ROOT:
+To verify INTERMEDIATE against ROOT:
 ```bash
+# NOTE: replace `<INTERMEDIATE>` with the intermediate name
 sudo openssl verify -CAfile /root/CA/certs/ca.cert.pem /root/CA/<INTERMEDIATE>/certs/intermediate.cert.pem
 ```

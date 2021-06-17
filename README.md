@@ -11,9 +11,9 @@ sudo rm -rf /root/ca
 Grab the scripts:
 ```bash
 cd
-sudo rm -rf ~/est-tests
+sudo rm -rf ~/my-simple-bash-ca
 git clone https://github.com/arlotito/my-simple-bash-ca
-cd ~/est-tests/certs
+cd ~/my-simple-bash-ca/certs
 chmod +x *.sh
 ```
 

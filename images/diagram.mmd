@@ -1,0 +1,10 @@
+graph TD
+    START(.) --> | ./create_root.sh myCA | myCA
+
+    myCA --> | ./create_int.sh INT1 | INT1
+    myCA --> | ./create_int.sh INT2 | INT2
+    myCA --> | ./create_int.sh INT3 | INT3
+
+    INT1 --> | ./create_server.sh INT1 server.contoso.com  | SERVER
+    INT2 --> | ./create_client.sh INT2 clientA  | clientA
+    INT3 --> | ./create_client.sh INT3 deviceA  | deviceA

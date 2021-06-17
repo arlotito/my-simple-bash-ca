@@ -13,7 +13,7 @@ Grab the scripts:
 cd
 sudo rm -rf ~/my-simple-bash-ca
 git clone https://github.com/arlotito/my-simple-bash-ca
-cd ~/my-simple-bash-ca/certs
+cd ~/my-simple-bash-ca/scripts
 chmod +x *.sh
 ```
 
@@ -21,7 +21,7 @@ Customize ./scripts/*.openssl.cnf files as needed or keep default values.
 
 You can now create your certs. As an example, to create certs as per the diagram above:
 ```bash
-cd
+cd ~/my-simple-bash-ca/scripts
 sudo ./create_root.sh
 
 sudo ./create_int.sh INT1

@@ -1,22 +1,6 @@
 Simple CA for creating root, intermediate and leaf (client/server) certificates. For testing purposes only.
 
 ![picture 1](images/diagram.png)  
-```bash
-cd
-
-sudo ./create_root.sh
-
-sudo ./create_int.sh INT1
-sudo ./create_server.sh INT1 server.contoso.com
-
-sudo ./create_int.sh INT2
-sudo ./create_client.sh INT2 clientA
-
-sudo ./create_int.sh INT3  
-sudo ./create_client.sh INT3 deviceA  
-```
-
-All the certificates are stored in `/root/ca`.
 
 ## getting started
 Optionally clear the CA store:
@@ -33,7 +17,26 @@ cd ~/est-tests/certs
 chmod +x *.sh
 ```
 
-...and create your own certs.
+Create your certs.
+
+As an example, to create certs as per the diagram above:
+```bash
+cd
+sudo ./create_root.sh
+
+sudo ./create_int.sh INT1
+sudo ./create_server.sh INT1 server.contoso.com
+
+sudo ./create_int.sh INT2
+sudo ./create_client.sh INT2 clientA
+
+sudo ./create_int.sh INT3  
+sudo ./create_client.sh INT3 deviceA  
+```
+
+All the certificates are stored in `/root/ca`.
+
+
 Customize .openssl.cnf as needed.
 
 ## creates ROOT and INTERMEDIATE certs

@@ -1,4 +1,4 @@
-Simple CA for creating root, intermediate and leaf (client/server) certificates. For testing purposes only.
+Simple CA for creating self-signed root, intermediate and leaf (client/server) x509 certificates. For testing purposes only.
 
 ![picture 1](images/diagram.png)  
 

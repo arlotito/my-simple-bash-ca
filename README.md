@@ -1,11 +1,13 @@
 A bunch of bash scripts implementing a minimal Certification Authority (CA).
 
-Useful for easily and quickly creating self-signed root, intermediate and leaf (client/server) x509 certificates for testing purposes only.
+Useful for easily and quickly creating self-signed root, intermediate and leaf (client/server) x509 certificates.
+
+For testing purposes only!
 
 ![picture 1](images/diagram.png)  
 
 ## getting started
-Optionally clear the CA store:
+Optionally clear the CA folder:
 ```bash
 sudo rm -rf /root/ca
 ```

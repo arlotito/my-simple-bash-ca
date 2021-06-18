@@ -1,4 +1,5 @@
-Simple CA for creating self-signed root, intermediate and leaf (client/server) x509 certificates. For testing purposes only.
+A simple CA for creating self-signed root, intermediate and leaf (client/server) x509 certificates. For testing purposes only.
+You just need a bash shell and openssl.
 
 ![picture 1](images/diagram.png)  
 

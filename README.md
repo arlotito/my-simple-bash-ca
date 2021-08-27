@@ -43,16 +43,14 @@ All the certificates are stored in `/root/ca`.
 ## view and verify certs
 To optionally view the ROOT certificate:
 ```bash
-sudo openssl x509 -noout -in /root/ca/certs/ca.cert.pem -noout -subject
-sudo openssl x509 -noout -in /root/ca/certs/ca.cert.pem -noout -issuer
+sudo openssl x509 -noout -in /root/ca/certs/ca.cert.pem -noout -subject -issuer
 ```
 
 To view the INTERMEDIATE certificates:
 
 ```bash
 # NOTE: replace `<INTERMEDIATE>` with the intermediate name
-sudo openssl x509 -noout -in <INTERMEDIATE>/certs/intermediate.cert.pem -noout -subject
-sudo openssl x509 -noout -in <INTERMEDIATE>/certs/intermediate.cert.pem -noout -issuer
+sudo openssl x509 -noout -in <INTERMEDIATE>/certs/intermediate.cert.pem -noout -subject -issuer
 ```
 
 To verify INTERMEDIATE against ROOT:

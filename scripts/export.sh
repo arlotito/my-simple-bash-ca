@@ -1,5 +1,5 @@
 #!/bin/bash
-# usage: ./export.sh <certificate-name> <dest-folder>
+# usage: ./export.sh <intermediate> <certificate-name> <dest-folder>
 
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
@@ -7,8 +7,12 @@ if [ "$EUID" -ne 0 ]
 fi
 
 export CA_ROOT="/root/ca"
-export CERT_NAME=$1     # "intermediate" for intermediate, or cert name for client/server (ex. "est.arturol76.net" or "device3")
-export DEST_DIR=$2
+export INTERMEDIATE_DIR=$1
+export CERT_NAME=$2     # "intermediate" for intermediate, or cert name for client/server (ex. "est.arturol76.net" or "device3")
+export DEST_DIR=$3
+
+# create dest folder if it does not exist
+sudo mkdir -p ${DEST_DIR}
 
 # export int
 cp ${CA_ROOT}/${INTERMEDIATE_DIR}/certs/ca-chain.cert.pem ${DEST_DIR}/${INTERMEDIATE_DIR}-ca-chain.cert.pem

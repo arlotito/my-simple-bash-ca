@@ -28,17 +28,28 @@ You can now create your certs. As an example, to create certs as per the diagram
 cd ~/my-simple-bash-ca/scripts
 sudo ./create_root.sh
 
-sudo ./create_int.sh INT1
-sudo ./create_server.sh INT1 server.contoso.com
+sudo ./create_int.sh int1
+sudo ./create_server.sh int1 server.contoso.com
 
-sudo ./create_int.sh INT2
-sudo ./create_client.sh INT2 clientA
+sudo ./create_int.sh int2
+sudo ./create_client.sh int2 clientA
 
-sudo ./create_int.sh INT3  
-sudo ./create_client.sh INT3 deviceA  
+sudo ./create_int.sh int3  
+sudo ./create_client.sh int3 deviceA  
 ```
 
+## export certs
 All the certificates are stored in `/root/ca`.
+To export them into a given folder:
+```bash
+./export.sh <intermediate> <certificate-name> <dest-folder>
+```
+
+Examples:
+```bash
+sudo ./export.sh int1 intermediate ~/
+
+```
 
 ## view and verify certs
 To optionally view the ROOT certificate:

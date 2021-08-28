@@ -18,6 +18,7 @@ The commands below and the configuration file create a self-signed certificate (
 
 The DNS names are placed in the SAN through the configuration file with the line subjectAltName = @alternate_names (there's no way to do it through the command line). Then there's an alternate_names section in the configuration file (you should tune this to suit your taste):
 
+```
 [ alternate_names ]
 
 DNS.1       = example.com
@@ -31,6 +32,8 @@ DNS.4       = ftp.example.com
 # DNS.6       = localhost.localdomain
 # IP.1        = 127.0.0.1
 # IP.2        = ::1
+```
+
 It's important to put DNS name in the SAN and not the CN, because both the IETF and the CA/Browser Forums specify the practice. They also specify that DNS names in the CN are deprecated (but not prohibited). If you put a DNS name in the CN, then it must be included in the SAN under the CA/B policies. So you can't avoid using the Subject Alternate Name.
 
 If you don't do put DNS names in the SAN, then the certificate will fail to validate under a browser and other user agents which follow the CA/Browser Forum guidelines.

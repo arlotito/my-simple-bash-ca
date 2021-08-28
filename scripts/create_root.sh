@@ -14,7 +14,7 @@ ROOT_CA=/root/$1
 mkdir -p ${ROOT_CA}/certs ${ROOT_CA}/crl ${ROOT_CA}/newcerts ${ROOT_CA}/private
 
 # create root key
-openssl genrsa -aes256 -out ${ROOT_CA}/private/ca.key.pem 4096
+openssl genrsa -nodes -aes256 -out ${ROOT_CA}/private/ca.key.pem 4096
 chmod 400 ${ROOT_CA}/private/ca.key.pem
 
 # create root cert

@@ -42,13 +42,25 @@ sudo ./create_client.sh int3 deviceA
 All the certificates are stored in `/root/ca`.
 To export them into a given folder:
 ```bash
-./export.sh <intermediate> <certificate-name> <dest-folder>
-```
+Usage: ./export.sh -i <intermediate-name> -c <certificate-name> -d <dest-folder> [-k] [-h]
+  -h  Display help
+  -i  name of the intermediate  
+      (it's the /root/ca/<intermediate-name>)
+  -c  name of the certificate ("intermediate" or client/server name) 
+      (it's /root/ca/<intermediate-name>/certs/<CERT_NAME>.cert.pem and /root/ca/<intermediate-name>/private/<CERT_NAME>.cert.pem)
+  -d  destination folder
+  -k  exports the private key
 
 Examples:
-```bash
-sudo ./export.sh int1 intermediate ~/
 
+  to extract the intermediate "int1" (including private key) into ~/exported:
+    ./export.sh -i int1 -c intermediate -d ~/exported -k
+
+  to extract the server "est.contoso.com" (including private key) into ~/exported:
+    ./export.sh -i int1 -c est.contoso.com -d ~/exported -k
+
+  to extract the client "device3" (including private key) into ~/exported:
+    ./export.sh -i int1 -c device3 -d ~/exported -k
 ```
 
 ## view and verify certs

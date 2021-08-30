@@ -1,5 +1,4 @@
 #!/bin/bash
-# usage: ./export.sh <intermediate> <certificate-name> <dest-folder>
 
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root: sudo ./export.sh"
